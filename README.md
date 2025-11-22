@@ -76,16 +76,7 @@ inventario/
 - Android Studio o Visual Studio Code
 - SDK de Android configurado
 
-## 7. Instalación
-
-```
-git clone https://github.com/Wissbegierde/inventario.git
-cd inventario
-flutter pub get
-flutter run
-```
-
-## 8. Autores
+## 7. Autores
 
 - Roger Schneider Fuentes Garcés — Product Owner  
 - Thomas Alejandro Pérez Rojas — Equipo de desarrollo  
