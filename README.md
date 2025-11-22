@@ -1,16 +1,78 @@
-# inventario
+# StockMaster PyME
 
-A new Flutter project.
+Aplicación móvil de gestión de inventarios para pequeñas y medianas empresas (PyMEs), desarrollada en Flutter como proyecto académico para el curso de Ingeniería de Software.
 
-## Getting Started
+El objetivo principal es ofrecer una herramienta sencilla y centralizada para controlar el stock en tiempo real, reducir pérdidas por caducidad o extravío y facilitar la toma de decisiones mediante reportes y métricas.
 
-This project is a starting point for a Flutter application.
+## Estado del proyecto
+En desarrollo activo.
 
-A few resources to get you started if this is your first Flutter project:
+## Funcionalidades previstas
+- Autenticación y roles (Administrador y Usuario/Empleado)
+- CRUD de productos
+- Movimientos de inventario
+- Gestión de proveedores
+- Dashboard
+- Reportes
+- Alertas
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Arquitectura general
+Arquitectura por capas, frontend en Flutter y backend previsto con Firebase.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Estructura del proyecto
+inventario/
+├── android/
+├── ios/
+├── linux/
+├── macos/
+├── web/
+├── windows/
+├── lib/
+├── test/
+├── integration_test/
+├── image/
+│   └── DOCUMENTACION_PROYECTO/
+├── pubspec.yaml
+└── README.md
+
+## Tecnologías utilizadas
+- Dart + Flutter
+- Firebase (planificado)
+- Git + GitHub
+- Arquitectura por capas
+
+## Requisitos previos
+- Flutter SDK
+- Dart SDK
+- Android Studio / VS Code
+- SDK Android configurado
+
+## Instalación y ejecución
+1. Clonar el repositorio
+   git clone https://github.com/Wissbegierde/inventario.git
+   cd inventario
+
+2. Instalar dependencias
+   flutter pub get
+
+3. Ejecutar la app
+   flutter run
+
+## Pruebas
+flutter test
+flutter test integration_test
+
+## Documentación
+Disponible en image/DOCUMENTACION_PROYECTO/
+
+## Contribuciones
+Proceso mediante fork, ramas y pull requests.
+
+## Autores
+- Roger Schneider Fuentes Garcés – Product Owner
+- Thomas Alejandro Pérez Rojas – Dev Team
+- Juan David Mena Gamboa – Scrum Master
+- Juan Daniel Sandoval – Dev Team
+
+## Licencia
+Sin licencia explícita aún.
