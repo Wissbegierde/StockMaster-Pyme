@@ -1,25 +1,54 @@
 # StockMaster PyME
 
-Aplicación móvil de gestión de inventarios para pequeñas y medianas empresas (PyMEs), desarrollada en Flutter como proyecto académico para el curso de Ingeniería de Software.
+StockMaster PyME es una aplicación móvil desarrollada en Flutter para la gestión de inventario en pequeñas y medianas empresas. Este proyecto forma parte de un trabajo académico en Ingeniería de Software y sigue prácticas de arquitectura modular, documentación formal y control de versiones.
 
-El objetivo principal es ofrecer una herramienta sencilla y centralizada para controlar el stock en tiempo real, reducir pérdidas por caducidad o extravío y facilitar la toma de decisiones mediante reportes y métricas.
+## 1. Descripción General
 
-## Estado del proyecto
-En desarrollo activo.
+La aplicación permite administrar productos, proveedores, movimientos de inventario y métricas operativas. Su propósito es proporcionar una herramienta confiable para el control de existencias y la toma de decisiones internas.
 
-## Funcionalidades previstas
-- Autenticación y roles (Administrador y Usuario/Empleado)
+## 2. Características Principales
+
+### 2.1 Gestión de Usuarios
+- Autenticación (Firebase Authentication - planificado)
+- Roles: Administrador y Usuario Operativo
+- Control de permisos
+
+### 2.2 Gestión de Inventario
 - CRUD de productos
-- Movimientos de inventario
-- Gestión de proveedores
-- Dashboard
-- Reportes
-- Alertas
+- Stock mínimo configurable
+- Alertas por desabastecimiento
+- Soporte opcional para fecha de caducidad
 
-## Arquitectura general
-Arquitectura por capas, frontend en Flutter y backend previsto con Firebase.
+### 2.3 Movimientos de Inventario
+- Entradas, salidas y ajustes
+- Auditoría de movimientos
+- Historial consultable por fecha
 
-## Estructura del proyecto
+### 2.4 Dashboard
+- Indicadores resumen
+- Valor estimado del inventario
+- Productos críticos
+- Movimientos recientes
+
+### 2.5 Reportes
+- Exportación de listados
+- Reportes filtrados por rango de fechas
+- Exportación a PDF (en desarrollo)
+
+## 3. Arquitectura del Proyecto
+
+El proyecto sigue una arquitectura por capas:
+- Presentación (Flutter)
+- Lógica de negocio modular
+- Persistencia planeada en Firebase
+- Servicios externos programados para expansión futura
+
+Documentación formal del proyecto disponible en:
+`image/DOCUMENTACION_PROYECTO/`
+
+## 4. Estructura del Repositorio
+
+```
 inventario/
 ├── android/
 ├── ios/
@@ -34,45 +63,33 @@ inventario/
 │   └── DOCUMENTACION_PROYECTO/
 ├── pubspec.yaml
 └── README.md
+```
 
-## Tecnologías utilizadas
-- Dart + Flutter
+## 5. Tecnologías Utilizadas
+- Flutter (Dart)
 - Firebase (planificado)
-- Git + GitHub
-- Arquitectura por capas
+- Git y GitHub
+- Arquitectura modular
 
-## Requisitos previos
-- Flutter SDK
+## 6. Requisitos Previos
+- Flutter SDK estable
 - Dart SDK
-- Android Studio / VS Code
-- SDK Android configurado
+- Android Studio o Visual Studio Code
+- SDK de Android configurado
 
-## Instalación y ejecución
-1. Clonar el repositorio
-   git clone https://github.com/Wissbegierde/inventario.git
-   cd inventario
+## 7. Instalación
 
-2. Instalar dependencias
-   flutter pub get
+```
+git clone https://github.com/Wissbegierde/inventario.git
+cd inventario
+flutter pub get
+flutter run
+```
 
-3. Ejecutar la app
-   flutter run
+## 8. Autores
 
-## Pruebas
-flutter test
-flutter test integration_test
+- Roger Schneider Fuentes Garcés — Product Owner  
+- Thomas Alejandro Pérez Rojas — Equipo de desarrollo  
+- Juan David Mena Gamboa — Scrum Master  
+- Juan Daniel Sandoval — Equipo de desarrollo  
 
-## Documentación
-Disponible en image/DOCUMENTACION_PROYECTO/
-
-## Contribuciones
-Proceso mediante fork, ramas y pull requests.
-
-## Autores
-- Roger Schneider Fuentes Garcés – Product Owner
-- Thomas Alejandro Pérez Rojas – Dev Team
-- Juan David Mena Gamboa – Scrum Master
-- Juan Daniel Sandoval – Dev Team
-
-## Licencia
-Sin licencia explícita aún.
