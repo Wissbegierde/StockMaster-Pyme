@@ -7,6 +7,7 @@ import 'providers/product_provider.dart';
 import 'providers/movement_provider.dart';
 import 'providers/supplier_provider.dart';
 import 'providers/alert_provider.dart';
+import 'providers/inventory_value_history_provider.dart';
 import 'screens/auth/login_screen.dart';
 import 'screens/home/home_screen.dart';
 
@@ -33,6 +34,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => MovementProvider()),
         ChangeNotifierProvider(create: (context) => SupplierProvider()),
         ChangeNotifierProvider(create: (context) => AlertProvider()),
+        ChangeNotifierProvider(create: (context) => InventoryValueHistoryProvider()),
       ],
       child: MaterialApp(
         title: 'StockMaster PyME',
