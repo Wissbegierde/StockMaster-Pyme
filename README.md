@@ -43,9 +43,6 @@ El proyecto sigue una arquitectura por capas:
 - Persistencia planeada en Firebase
 - Servicios externos programados para expansión futura
 
-Documentación formal del proyecto disponible en:
-`image/DOCUMENTACION_PROYECTO/`
-
 ## 4. Estructura del Repositorio
 
 ```
