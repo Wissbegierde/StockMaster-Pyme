@@ -564,6 +564,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     value: movementsToday.toString(),
                     icon: FontAwesomeIcons.arrowRightArrowLeft,
                     color: const Color(0xFF8B5CF6),
+                    onTap: () {
+                      // Navegar a la lista de movimientos de hoy
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MovementsListScreen(showTodayOnly: true),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
