@@ -11,7 +11,9 @@ import 'product_form_screen.dart';
 import 'product_detail_screen.dart';
 
 class ProductsListScreen extends StatefulWidget {
-  const ProductsListScreen({super.key});
+  final bool showLowStockOnly;
+  
+  const ProductsListScreen({super.key, this.showLowStockOnly = false});
 
   @override
   State<ProductsListScreen> createState() => _ProductsListScreenState();
@@ -89,13 +91,19 @@ class _ProductsListScreenState extends State<ProductsListScreen> with TickerProv
       return;
     }
     
-    debugPrint('[ProductsListScreen] _loadProducts called');
+    debugPrint('[ProductsListScreen] _loadProducts called, showLowStockOnly: ${widget.showLowStockOnly}');
     _isLoadingProducts = true;
     
     try {
       final productProvider = Provider.of<ProductProvider>(context, listen: false);
-      // Cargar productos siempre (permite refresh)
-      await productProvider.loadProducts();
+      
+      // Si se solicita mostrar solo productos con stock bajo, cargar esos
+      if (widget.showLowStockOnly) {
+        await productProvider.loadLowStockProducts();
+      } else {
+        // Cargar productos siempre (permite refresh)
+        await productProvider.loadProducts();
+      }
       debugPrint('[ProductsListScreen] _loadProducts completed');
     } finally {
       _isLoadingProducts = false;
@@ -176,7 +184,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> with TickerProv
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Productos'),
+        title: Text(widget.showLowStockOnly ? 'Productos con Stock Bajo' : 'Productos'),
         backgroundColor: const Color(0xFF667eea),
         foregroundColor: Colors.white,
         elevation: 0,

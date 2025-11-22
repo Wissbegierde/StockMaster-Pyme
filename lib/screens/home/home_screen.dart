@@ -508,6 +508,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     value: totalProducts.toString(),
                     icon: FontAwesomeIcons.boxesStacked,
                     color: const Color(0xFF10B981),
+                    onTap: () {
+                      // Navegar a la lista de productos
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ProductsListScreen(),
+                        ),
+                      );
+                    },
                   ),
                 ),
                 const SizedBox(width: 16),
@@ -517,6 +525,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     value: lowStockCount.toString(),
                     icon: FontAwesomeIcons.exclamationTriangle,
                     color: const Color(0xFFEF4444),
+                    onTap: () {
+                      // Navegar a la lista de productos con stock bajo
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const ProductsListScreen(showLowStockOnly: true),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ],
@@ -615,8 +631,9 @@ class _HomeScreenState extends State<HomeScreen> {
     required String value,
     required IconData icon,
     required Color color,
+    VoidCallback? onTap,
   }) {
-    return Container(
+    final cardContent = Container(
       padding: const EdgeInsets.all(20),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -675,6 +692,16 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
     );
+
+    // Si hay onTap, hacer la tarjeta clickeable
+    if (onTap != null) {
+      return GestureDetector(
+        onTap: onTap,
+        child: cardContent,
+      );
+    }
+
+    return cardContent;
   }
 
   void _handleProfile(BuildContext context, AuthProvider authProvider) {
